@@ -1,0 +1,31 @@
+/* Find the average total compensation based on employee titles and gender. Not every employee receives a bonus so disregard employees without bonuses in your calculation. 
+   Employee can receive more than one bonus. Output the employee title, gender (i.e., sex), along with the average total compensation. */
+
+WITH total_bonus AS (
+    SELECT worker_ref_id, SUM(bonus) AS bonus
+    FROM sf_bonus
+    GROUP BY worker_ref_id)
+
+select A.employee_title, A.sex, avg(A.salary + B.bonus) as TotalSal
+from sf_employee A
+inner join total_bonus B
+on A.id = B.worker_ref_id 
+group by A.employee_title, A.sex
+
+-- Find the number of apartments per nationality that are owned by people under 30 years old. Output the nationality along with the number of apartments.
+
+select A.country, count(distinct(A.city))
+from airbnb_units A
+join airbnb_hosts B
+on A.host_id = B.host_id
+where A.unit_type = 'Apartment'
+and B.age < 30
+group by A.country
+
+/* Rank guests based on the number of messages they've exchanged with the hosts. Guests with the same number of messages as other guests should have the same rank.
+   Do not skip rankings if the preceding rankings are identical. */
+   
+select dense_rank() over(order by sum(n_messages)desc) as ranking, id_guest, sum(n_messages)
+from airbnb_contacts
+group by id_guest
+order by sum(n_messages) desc;

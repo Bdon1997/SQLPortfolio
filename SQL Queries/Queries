@@ -1,0 +1,36 @@
+
+
+-- Find all posts which were reacted to with a heart. For such posts output all columns from facebook_posts table.
+
+select Distinct B.*
+from facebook_reactions A
+join facebook_posts B
+on A.post_id = B.post_id
+where A.reaction = 'heart'
+
+-- Count the number of movies that Abigail Breslin was nominated for an oscar.
+
+select count(*) as movies
+from oscar_nominees
+where nominee = 'Abigail Breslin';
+
+/* Find the current salary of each employee assuming that salaries increase each year. 
+   Output their id, first name, last name, department ID, and current salary. Order your list by employee ID in ascending order. */
+   
+select id, first_name, Last_name, max(salary)
+from ms_employee_salary
+group by id, first_name, Last_name
+order by id
+
+/* Write a query that calculates the difference between the highest salaries found in the marketing and engineering departments.
+   Output just the absolute difference in salaries. */
+   
+ select Max(E.salary) as 'highest engineering', Max(T.salary) as 'highest marketing', max(T.salary) - max(E.salary) as Difference
+from db_employee E
+left join db_employee T
+where E.department_id = 1 
+  and T.department_id = 4
+  
+-- 1- engineering
+-- 4- marketing
+

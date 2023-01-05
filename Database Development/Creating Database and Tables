@@ -1,0 +1,37 @@
+Creating databate
+
+create database ARMDB
+
+creating Table
+
+create table TableA (trainerid INTEGER, starttime DATETIME, endtime DATETIME, rowed INTEGER)
+Inserting data
+insert into TableA (trainerid, starttime, endtime, rowid)
+	   values ('1234','20181001 08:45:00', '20181001 09:15:00', 2), 
+			  ('1234','20181001 09:30:00', '20181001 10:00:00', 3),
+			  ('2345','20181001 08:45:00', '20181001 09:15:00', 4),
+			  ('2345','20181001 09:30:00', '20181001 10:00:00', 5),
+			  ('2345','20181001 10:50:00', '20181001 11:50:00', 6),
+			  ('2345','20181001 09:50:00', '20181001 10:00:00', 7);
+        
+Altering table 
+
+This will allow you to add columns to the table you created
+ALTER TABLE TableA ADD rowid INTEGER;
+
+This will allow you to add a column to your database
+
+alter table Tickets_Imprt
+      drop column incidentid;
+      
+this will allow you to delete a column 
+
+Updating table data
+
+update TableA
+set starttime = '20181001 08:30:00' 
+where trainerid = 1234;
+
+Move table and all it’s contents to another database
+
+select * into Imports.dbo.TableA from Master.dbo.TableA;

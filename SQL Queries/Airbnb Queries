@@ -29,3 +29,10 @@ select dense_rank() over(order by sum(n_messages)desc) as ranking, id_guest, sum
 from airbnb_contacts
 group by id_guest
 order by sum(n_messages) desc;
+
+Find the average number of bathrooms and bedrooms for each city’s property types. Output the result along with the city name and the property type.
+
+select city, Property_type, avg(bathrooms) as Bathrooms, avg(bedrooms) as Bedrooms
+from airbnb_search_details
+group by city,Property_type
+

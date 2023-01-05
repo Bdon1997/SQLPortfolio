@@ -17,7 +17,8 @@ WHERE salary=(SELECT MAX(salary) FROM worker)
 group by worker.salary, worker.department, title.worker_title
 order by salary desc
 
-Find the date with the highest total energy consumption from the Meta/Facebook data centers. Output the date along with the total energy consumption across all data centers.
+Find the date with the highest total energy consumption from the Meta/Facebook data centers.
+Output the date along with the total energy consumption across all data centers.
 
 select A.date, sum(consumption) as TotalConsumption
 from (select * from fb_eu_energy
@@ -28,3 +29,15 @@ from (select * from fb_eu_energy
 group by date
 order by sum(consumption) desc
 limit 2
+
+Write a query that'll identify returning active users. A returning active user is a user that has made a second purchase within 7 days of any other of their purchases. 
+Output a list of user_ids of these returning active users.
+
+select distinct temp.user_id from
+(
+SELECT user_id, created_at,
+LAG(created_at, 1) OVER(PARTITION BY user_id
+ORDER BY user_id, created_at) as previousorder
+FROM amazon_transactions
+) as temp
+where datediff(temp.created_at,temp.previousorder) < 8

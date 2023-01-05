@@ -16,3 +16,15 @@ on worker_id = worker_ref_id
 WHERE salary=(SELECT MAX(salary) FROM worker)
 group by worker.salary, worker.department, title.worker_title
 order by salary desc
+
+Find the date with the highest total energy consumption from the Meta/Facebook data centers. Output the date along with the total energy consumption across all data centers.
+
+select A.date, sum(consumption) as TotalConsumption
+from (select * from fb_eu_energy
+      union ALL
+      select * from fb_asia_energy
+      union ALL
+      select * from fb_na_energy) A
+group by date
+order by sum(consumption) desc
+limit 2

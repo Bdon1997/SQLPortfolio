@@ -1,0 +1,22 @@
+SELF join (to find parent with no child)
+
+select distinct A.store_id, A.store_name, A.parent_store_id
+from store A
+Where Not Exists (
+  Select parent_store_id 
+  From store b
+  Where B.parent_store_id = A.store_id
+
+select distinct A.store_id, A.store_name, A.parent_store_id
+from store A
+Where A.store_id Not in (
+  Select parent_store_id 
+  From store b
+  Where B.parent_store_id = A.store_id)
+
+CREATE VIEW (creating a view for to monitor the profit made per phase within the collection of marvel movies)
+create view PhaseProfit as
+(
+select Phase, sum(production_budgetUSD) as Budget, sum(worldwide_RevenueUSD) as Revenue, Sum(worldwide_RevenueUSD - production_budgetUSD) as Profit
+from MCUmovies
+group by phase)

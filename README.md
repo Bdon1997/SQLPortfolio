@@ -1,11 +1,9 @@
-<h1 align="center">Welcome👋, I'm Browndon Bokanga</h1>
-<h3 align="center">A passionate Software Developer always looking to expand my skills</h3>
+<h1 align="center">Hi👋, I'm Browndon Bokanga</h1>
+<h3 align="center">This is my SQL protfolio</h3>
 
-- 🔭 I’m currently working on **Database Development**
+- 🔭 Working on **Database Development**
 
-- 🌱 I’m currently learning **Data Development, MS SQL Server, Azure, Power BI**
-
-- 📫 How to contact me **bokanga97.bb@gmail.com**
+- 🌱 Where I learned **Data Development, MS SQL Server, Azure, Power BI**
 
 - 📄 Know about my experiences [https://www.linkedin.com/in/browndon-bokanga-93b509184/](https://www.linkedin.com/in/browndon-bokanga-93b509184/)
 

@@ -3,7 +3,7 @@
 
 - 🔭 Working on **Database Development**
 
-- 🌱 Where I learned **Data Development, MS SQL Server, Azure, Power BI**
+- 🌱 Where I learned **Data Manipulation, MS SQL Server, Azure, Power BI**
 
 - 📄 Know about my experiences [https://www.linkedin.com/in/browndon-bokanga-93b509184/](https://www.linkedin.com/in/browndon-bokanga-93b509184/)
 

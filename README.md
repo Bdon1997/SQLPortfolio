@@ -9,7 +9,6 @@
 
 - 📄 Know about my experiences [https://www.linkedin.com/in/browndon-bokanga-93b509184/](https://www.linkedin.com/in/browndon-bokanga-93b509184/)
 
-<h3 align="left">Connect with me:</h3>
 <p align="left">
 </p>
 
